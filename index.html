@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/style.css">
+    <title>Calcule sua média do ENEM 2023</title>
+</head>
+
+<body>
+    <div class="container-principal">
+        <div class="text">
+            <h1>Calcule sua média ENEM de 2023</h1>
+            <p>Preencha as lacunas com as notas e pesos respectivos.</p>
+        </div>
+        <form action="calcularMedia" id="calcenem" name="calcenem">
+            <table>
+                <tbody>
+                    <tr>
+                        <th>Área de conhecimento</th>
+                        <th>Nota</th>
+                        <th>Peso</th>
+                    </tr>
+                    <tr>
+                        <td>Redação</td>
+                        <td>
+                            <input name="notare" type="number">
+                        </td>
+                        <td>
+                            <input name="pesore" type="number" value="1">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Ciências da Natureza e suas Tecnologias</td>
+                        <td>
+                            <input name="notacn" type="number">
+                        </td>
+                        <td>
+                            <input name="pesocn" type="number" value="1">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Ciências Humanas e suas Tecnologias</td>
+                        <td>
+                            <input name="notach" type="number">
+                        </td>
+                        <td>
+                            <input name="pesoch" type="number" value="1">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Linguagens, Códigos e suas Tecnologias</td>
+                        <td>
+                            <input name="notalc" type="number">
+                        </td>
+                        <td>
+                            <input name="pesolc" type="number" value="1">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Matemática</td>
+                        <td>
+                            <input name="notamt" type="number">
+                        </td>
+                        <td>
+                            <input name="pesomt" type="number" value="1">
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
+    </div>
+
+    <script src="./assets/script.js"></script>
+</body>
+
+</html>
