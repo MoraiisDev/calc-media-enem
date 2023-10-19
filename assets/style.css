@@ -32,3 +32,8 @@ input {
     width: 100px;
     text-align: center;
 }
+
+.buttonMedia {
+    text-align: center;
+    margin: 1.2vh;
+}
