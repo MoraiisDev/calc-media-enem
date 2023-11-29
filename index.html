@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/style.css">
     <title>Calcule sua média do ENEM 2023</title>
+    <script src="./assets/script.js" defer></script>
 </head>
 
 <body>
@@ -25,61 +26,59 @@
                     <tr>
                         <td>Redação</td>
                         <td>
-                            <input name="notare" type="number">
+                            <input id="notare" name="notare" type="number" min="0" max="1000">
                         </td>
                         <td>
-                            <input name="pesore" type="number" value="1">
+                            <input id="pesore" name="pesore" type="number" value="1" max="3">
                         </td>
                     </tr>
 
                     <tr>
                         <td>Ciências da Natureza e suas Tecnologias</td>
                         <td>
-                            <input name="notacn" type="number">
+                            <input id="notacn" name="notacn" type="number">
                         </td>
                         <td>
-                            <input name="pesocn" type="number" value="1">
+                            <input id="pesocn" name="pesocn" type="number" value="1">
                         </td>
                     </tr>
 
                     <tr>
                         <td>Ciências Humanas e suas Tecnologias</td>
                         <td>
-                            <input name="notach" type="number">
+                            <input id="notach" name="notach" type="number">
                         </td>
                         <td>
-                            <input name="pesoch" type="number" value="1">
+                            <input id="pesoch" name="pesoch" type="number" value="1">
                         </td>
                     </tr>
 
                     <tr>
                         <td>Linguagens, Códigos e suas Tecnologias</td>
                         <td>
-                            <input name="notalc" type="number">
+                            <input id="notalc" name="notalc" type="number">
                         </td>
                         <td>
-                            <input name="pesolc" type="number" value="1">
+                            <input id="pesolc" name="pesolc" type="number" value="1">
                         </td>
                     </tr>
 
                     <tr>
                         <td>Matemática</td>
                         <td>
-                            <input name="notamt" type="number">
+                            <input id="notamt" name="notamt" type="number">
                         </td>
                         <td>
-                            <input name="pesomt" type="number" value="1">
+                            <input id="pesomt" name="pesomt" type="number" value="1">
                         </td>
                     </tr>
                 </tbody>
             </table>
         </form>
         <div class="buttonMedia">
-            <button class="calcPrincipal" onclick="calcular()">Calcular média</button>
+            <button id="calcPrincipal" onclick=""> Calcular média </button>
         </div>
     </div>
-
-    <script src="./assets/script.js"></script>
 </body>
 
 </html>
