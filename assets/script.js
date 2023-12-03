@@ -30,14 +30,14 @@ calcMedia.addEventListener("click", function(e) {
     const mediaGeral = (notaRE * pesoRE)/5 + (notaCN * pesoCN)/5 + (notaCH * pesoCH)/5 + (notaLC * pesoLC)/5 + (notaMT * pesoMT)/5
 
     if (pesoRE > 5 || pesoCN > 5 || pesoCH > 5 || pesoLC > 5 || pesoMT > 5) {
-        console.log ("O peso máximo é 5! Insira um valor menor")
+        document.getElementById("resultMessage").innerHTML = "O peso máximo é 5! Insira um valor menor";
     }
 
     else if (mediaGeral < 600) {
-        console.log ("Sua média no ENEM de 2023 é de: " , mediaGeral , "pontos. No proximo ano será ainda melhor!")
+        document.getElementById("resultMessage").innerHTML = "Sua média no ENEM de 2023 é de: " + mediaGeral + " pontos. No proximo ano será ainda melhor!";
     }
 
     else {
-    console.log ("Sua media do ENEM 2023 é de: ", mediaGeral, "pontos! Boa Sorte no SISU e Prouni!");
+        document.getElementById("resultMessage").innerHTML = "Sua media do ENEM 2023 é de: " + mediaGeral + " pontos! Boa Sorte no SISU e Prouni!";
     }
 });

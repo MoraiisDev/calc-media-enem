@@ -7,6 +7,9 @@
     <link rel="stylesheet" href="./assets/style.css">
     <title>Calcule sua média do ENEM 2023</title>
     <script src="./assets/script.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -18,7 +21,7 @@
         <form action="calcularMedia" id="calcenem" name="calcenem">
             <table>
                 <tbody>
-                    <tr>
+                    <tr id="base">
                         <th>Área de conhecimento</th>
                         <th>Nota</th>
                         <th>Peso</th>
@@ -77,8 +80,14 @@
         </form>
         <div class="buttonMedia">
             <button id="calcPrincipal" onclick=""> Calcular média </button>
+            <p id="resultMessage"></p>
         </div>
     </div>
+    <footer>
+        <p>
+            Feito por <a href="https://github.com/MoraiisDev" target="_blank">MoraiisDev</a>
+        </p>
+    </footer>
 </body>
 
 </html>
