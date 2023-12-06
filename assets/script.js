@@ -30,7 +30,7 @@ calcMedia.addEventListener("click", function(e) {
     let mediaPeso = parseInt(pesoRE + pesoCN + pesoCH + pesoLC + pesoMT);
 
     const mediaGeral = 
-    Math.round( (notaRE * pesoRE + notaCN * pesoCN + notaCH * pesoCH + notaLC * pesoLC + notaMT * pesoMT) / Math.trunc(mediaPeso) );
+    Math.round( (notaRE * pesoRE + notaCN * pesoCN + notaCH * pesoCH + notaLC * pesoLC + notaMT * pesoMT) / (mediaPeso) );
 
     if (pesoRE > 5 || pesoCN > 5 || pesoCH > 5 || pesoLC > 5 || pesoMT > 5) {
         document.getElementById("resultMessage").innerHTML = "O peso máximo é 5! Insira um valor menor";
