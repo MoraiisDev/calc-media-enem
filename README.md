@@ -6,7 +6,7 @@ com base em suas notas e pesos respectivos.
 </p>
 
 <p align="center">
-    <img alt = "print do projeto Calculadora ENEM" src="./images/media1.png">
+    <img alt = "print do projeto Calculadora ENEM" src="./assets/images/calc-media-image.png">
 </p>
 
 # Como funciona?

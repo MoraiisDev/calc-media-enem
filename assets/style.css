@@ -5,14 +5,14 @@
 }
 
 :root {
-    --bg-principal: #414b53;
+    --bg-principal: #414b55;
     --bg-secundario: #fffdd0;
-    --message-color: #8b0000 /*Cor texto média*/
+    --bg-destaque: #414b51;
+    --message-color: #8b0000
 
 }
 
 /* CSS MAIN */
-
 body {
     background: var(--bg-principal);
     font-family: 'Quicksand', sans-serif;
@@ -24,11 +24,30 @@ body {
     margin: 20px
 }
 
+.container-principal {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    width: 95%;
+    max-width: 800px;
+    margin: 200px auto 0;
+    padding: 20px;
+
+    background-color: var(--bg-destaque); 
+    border-radius: 15px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+}
+
 form {
     color: var(--bg-secundario);
     display: flex;
     flex-direction: row;
     justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
 }
 
 form #base {
@@ -79,7 +98,7 @@ input {
     transition: 0.2s all
 }
 
-#calcPrincipal:hover {
+#calcPrincipal:active {
     opacity: 0.2;
 }
 
@@ -106,4 +125,20 @@ footer a {
 footer a:hover {
     font-size: 14.5px;
     color: var(--bg-secundario); 
+}
+
+@media (min-width: 480px) and (max-width: 768px) {
+    .container-principal {
+        margin: 100px auto 0;
+    }
+
+    form {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 480px) {
+    .container-principal {
+        margin: 60px auto 0;
+    }
 }

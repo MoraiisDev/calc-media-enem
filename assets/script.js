@@ -7,44 +7,52 @@
 // *   Retornar a mensagem no console com a media ponderada dos vestibulandos
 // *   Em uma refatoração: Procurar melhorar a lógica e retornar a mensagem na tela para o usuário
 
+function getNotaPeso(idNota, idPeso) {
+    const nota = parseFloat(document.querySelector(idNota).value, 10);
+    const peso = parseInt(document.querySelector(idPeso).value, 10);
+    return { nota, peso };
+}
+
+function validarEntradas(notasPesos) {
+    for (const { nota, peso } of notasPesos) {
+        if (isNaN(nota) || isNaN(peso)) {
+            return "Por favor, insira valores válidos para todas as notas e pesos.";
+        }
+        if (peso > 5) {
+            return "O peso máximo é 5! Insira um valor menor.";
+        }
+        if (nota > 1000) {
+            return "A nota máxima é 1000! Insira um valor menor.";
+        }
+    }
+    return null;
+}
+
 const calcMedia = document.querySelector('#calcPrincipal');
 calcMedia.addEventListener("click", function (e) {
+    e.preventDefault();
 
-    e.preventDefault()
+    const notasPesos = [
+        getNotaPeso('#notare', '#pesore'),
+        getNotaPeso('#notacn', '#pesocn'),
+        getNotaPeso('#notach', '#pesoch'),
+        getNotaPeso('#notalc', '#pesolc'),
+        getNotaPeso('#notamt', '#pesomt')
+    ];
 
-    const notaRE = parseFloat(document.querySelector('#notare').value, 10);
-    let pesoRE = parseInt(document.querySelector('#pesore').value, 10);
+    const erro = validarEntradas(notasPesos);
+    if (erro) {
+        document.getElementById("resultMessage").innerHTML = erro;
+    } else {
+        const mediaPeso = notasPesos.reduce((acc, { peso }) => acc + peso, 0);
+        const mediaGeral = Math.round(
+            notasPesos.reduce((acc, { nota, peso }) => acc + nota * peso, 0) / mediaPeso
+        );
 
-    const notaCN = parseFloat(document.querySelector('#notacn').value, 10);
-    let pesoCN = parseInt(document.querySelector('#pesocn').value, 10);
-
-    const notaCH = parseFloat(document.querySelector('#notach').value, 10);
-    let pesoCH = parseInt(document.querySelector('#pesoch').value, 10);
-
-    const notaLC = parseFloat(document.querySelector('#notalc').value, 10);
-    let pesoLC = parseInt(document.querySelector('#pesolc').value, 10);
-
-    const notaMT = parseFloat(document.querySelector('#notamt').value, 10);
-    let pesoMT = parseInt(document.querySelector('#pesomt').value, 10);
-
-    let mediaPeso = parseInt(pesoRE + pesoCN + pesoCH + pesoLC + pesoMT);
-
-    const mediaGeral =
-        Math.round((notaRE * pesoRE + notaCN * pesoCN + notaCH * pesoCH + notaLC * pesoLC + notaMT * pesoMT) / (mediaPeso));
-
-    if (pesoRE > 5 || pesoCN > 5 || pesoCH > 5 || pesoLC > 5 || pesoMT > 5) {
-        document.getElementById("resultMessage").innerHTML = "O peso máximo é 5! Insira um valor menor";
-    }
-
-    else if (notaRE > 1000 || notaCN > 1000 || notaCH > 1000 || notaLC > 1000 || notaMT > 1000) {
-        document.getElementById("resultMessage").innerHTML = "A nota máxima é 1000! Insira um valor menor";
-    }
-
-    else if (mediaGeral < 600) {
-        document.getElementById("resultMessage").innerHTML = "Sua média no ENEM de 2023 é de: " + mediaGeral + " pontos. No proximo ano será ainda melhor!";
-    }
-
-    else {
-        document.getElementById("resultMessage").innerHTML = "Sua media do ENEM 2023 é de: " + mediaGeral + " pontos! Boa Sorte no SISU e Prouni!";
+        if (mediaGeral < 600) {
+            document.getElementById("resultMessage").innerHTML = "Sua média no ENEM de 2023 é de: " + mediaGeral + " pontos. No próximo ano será ainda melhor!";
+        } else {
+            document.getElementById("resultMessage").innerHTML = "Sua média do ENEM é de: " + mediaGeral + " pontos! Boa Sorte no SISU e Prouni!";
+        }
     }
 });
